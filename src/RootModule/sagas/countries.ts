@@ -17,12 +17,16 @@ const fetchCountries = async (payload: any) => {
 }
 
 function* workCountriesRequest(action: any) {
+    console.log(action);
     const actionCountriesRequest: CountryActionPayload = action;
     const { payload } = actionCountriesRequest;
     try {
         const { data, error } : OperationResult = yield call(fetchCountries, {
             continent: {
-              regex: payload
+              regex: payload?.continentCode
+            },
+            currency: {
+                regex: payload?.currency
             }
           })
         const responseCountries: CountriesPayload =  {

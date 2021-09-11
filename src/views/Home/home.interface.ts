@@ -7,3 +7,8 @@ export interface HomeViewProps {
     continentsRequest: Function,
     continents: ContinentsStateReducer
 }
+
+export interface HomeFilters {
+    continentCode: string,
+    currency: string
+}

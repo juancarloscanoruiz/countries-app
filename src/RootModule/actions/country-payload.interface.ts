@@ -1,3 +1,6 @@
 export interface CountryActionPayload {
-    payload?: string
+    payload?: {
+        continentCode: string;
+        currency: string;
+    }
 }
