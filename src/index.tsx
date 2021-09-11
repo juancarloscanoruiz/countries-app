@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GlobalStyles from './GlobalStyles';
+import { createClient, Provider } from 'urql';
+import { Provider as ReduxProvider } from 'react-redux';
+import store from './redux/store';
+
+const client = createClient({
+  url: 'https://countries.trevorblades.com/'
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalStyles />
+    <ReduxProvider store={store}>
+      <Provider value={client}>
+        <App />
+      </Provider>
+     </ReduxProvider> 
   </React.StrictMode>,
   document.getElementById('root')
 );
