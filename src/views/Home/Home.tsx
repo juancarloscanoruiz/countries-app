@@ -175,7 +175,7 @@ const HomeView: React.FC<HomeViewProps> = (props) => {
                                     </Select>
                                 </SelectContainer>
                                 <SelectContainer>
-                                    <Select style={{width: '150px'}} showSearch disabled={isLoadingCountries} onChange={handleFilterCurrency} loading={isLoadingContinents} placeholder="Select a continent">
+                                    <Select style={{width: '150px'}} showSearch disabled={isLoadingCountries} onChange={handleFilterCurrency} loading={isLoadingContinents} placeholder="Select a currency">
                                         {
                                             currencies.map((currency: string) => <Option key={currency} value={currency}>{currency}</Option>)
                                         }
